@@ -32,6 +32,22 @@ export const COMPANIES: Record<string, CompanyConfig> = {
     workingHours: "Ежедневно с 09:00 до 20:00",
     logoSubtext: "Студия локального беспокрасочного ремонта ЛКП"
   },
+  "pdr-kalinina-krd": {
+    slug: "pdr-kalinina-krd",
+    name: "Студия PDR на Калинина",
+    city: "Краснодаре",
+    phone: "+7 (918) 123-45-67",
+    phoneRaw: "79181234567",
+    whatsappPhone: "79181234567",
+    telegramChatId: "9181234567_chat",
+    isActive: true,
+    priceModifier: 0.55,
+    address: "г. Краснодар, ул. Калинина, 340, бокс 5",
+    shortAddress: "ул. Калинина, 340, бокс 5",
+    rating: 4.97,
+    workingHours: "Ежедневно с 09:00 до 20:00",
+    logoSubtext: "Беспокрасочное удаление вмятин на Калинина"
+  },
   "autovmyatina-msk": {
     slug: "autovmyatina-msk",
     name: "AutoVmyatina PDR Studio",
