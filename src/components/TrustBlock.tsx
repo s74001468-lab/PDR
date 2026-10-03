@@ -25,7 +25,7 @@ const CARDS = [
     icon: Coins,
     title: "Экономия до 70%",
     desc: "Отсутствуют расходы на дорогостоящие материалы (шпатлевка, грунт, краска, лак, подбор цвета и сушильная камера). Вы платите только за мастерство.",
-    highlight: "В 2-3 раза дешевле",
+    highlight: "В 2–3 раза дешевле",
   },
   {
     icon: Crosshair,
@@ -84,9 +84,9 @@ export function TrustBlock({ company }: TrustBlockProps) {
                   </p>
                 </div>
 
-                {/* Highlight Tag */}
+                {/* Highlight Tag - Clean Font for Numbers */}
                 <div className="mt-6 pt-4 border-t border-white/10">
-                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-amber-400 font-heading">
+                  <span className="text-[11px] font-extrabold uppercase tracking-wider text-amber-400 font-sans">
                     ✓ {card.highlight}
                   </span>
                 </div>
