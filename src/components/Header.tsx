@@ -6,7 +6,7 @@ import { CompanyConfig } from "@/lib/companies";
 
 interface HeaderProps {
   company: CompanyConfig;
-  onOpenSelector: () => void;
+  onOpenSelector?: () => void;
   onScrollToCalculator: () => void;
   onScrollToForm: () => void;
 }
@@ -30,7 +30,7 @@ export function Header({ company, onOpenSelector, onScrollToCalculator, onScroll
               {company.name}
             </a>
             <span className="text-[10px] sm:text-xs text-neutral-400 font-normal block leading-tight truncate">
-              PDR Студия • {company.city}
+              PDR Студия • {company.shortAddress || company.address}
             </span>
           </div>
         </div>
@@ -66,7 +66,7 @@ export function Header({ company, onOpenSelector, onScrollToCalculator, onScroll
         {/* СПРАВА: Телефон сервиса СТРОГО В ОДНУ СТРОКУ + Кнопки */}
         <div className="flex items-center gap-2 sm:gap-4 shrink-0">
           
-          {/* ТЕЛЕФОН СТРОГО В ОДНУ СТРОКУ БЕЗ ПЕРЕНОСОВ */}
+          {/* ТЕЛЕФОН + АДРЕС В ШАПКЕ */}
           <div className="text-right whitespace-nowrap">
             <a
               href={`tel:${company.phoneRaw}`}
@@ -74,8 +74,8 @@ export function Header({ company, onOpenSelector, onScrollToCalculator, onScroll
             >
               {company.phone}
             </a>
-            <span className="text-[10px] text-neutral-400 hidden sm:block leading-none mt-0.5">
-              Ежедневно 9:00 - 21:00
+            <span className="text-[10px] sm:text-xs text-amber-400 font-medium hidden sm:block leading-none mt-0.5">
+              • {company.shortAddress || company.address}
             </span>
           </div>
 
@@ -162,13 +162,15 @@ export function Header({ company, onOpenSelector, onScrollToCalculator, onScroll
               <span>Написать в WhatsApp</span>
             </a>
 
-            <button
-              onClick={() => handleNavClick(onOpenSelector)}
-              className="w-full py-2.5 rounded-xl bg-white/10 text-amber-400 text-xs font-bold uppercase flex items-center justify-center gap-2 border border-amber-500/30"
-            >
-              <Layers className="w-4 h-4" />
-              <span>Сменить город / Студию</span>
-            </button>
+            {onOpenSelector && (
+              <button
+                onClick={() => handleNavClick(onOpenSelector)}
+                className="w-full py-2.5 rounded-xl bg-white/10 text-amber-400 text-xs font-bold uppercase flex items-center justify-center gap-2 border border-amber-500/30"
+              >
+                <Layers className="w-4 h-4" />
+                <span>Сменить город / Студию</span>
+              </button>
+            )}
           </div>
         </div>
       )}

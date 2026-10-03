@@ -9,16 +9,33 @@ export interface CompanyConfig {
   isActive: boolean;
   priceModifier: number;
   address: string;
+  shortAddress?: string;
   rating: number;
   workingHours: string;
   logoSubtext?: string;
 }
 
 export const COMPANIES: Record<string, CompanyConfig> = {
+  "pdr-kovaleva-krd": {
+    slug: "pdr-kovaleva-krd",
+    name: "Студия удаления вмятин PDR на Ковалёва",
+    city: "Краснодаре",
+    phone: "+7 (978) 784-01-13",
+    phoneRaw: "79787840113",
+    whatsappPhone: "79787840113",
+    telegramChatId: "9787840113_chat",
+    isActive: true, // Сделана активной для демонстрации
+    priceModifier: 0.55, // Прайс-лист: от 1500 ₽ (малая ~2000 ₽, средняя ~4000 ₽, сложная ~7000 ₽)
+    address: "г. Краснодар, ул. Ковалёва, 15/4, бокс 18",
+    shortAddress: "ул. Ковалёва, 15/4, бокс 18",
+    rating: 4.98,
+    workingHours: "Ежедневно с 09:00 до 20:00",
+    logoSubtext: "Студия локального беспокрасочного ремонта ЛКП"
+  },
   "autovmyatina-msk": {
     slug: "autovmyatina-msk",
     name: "AutoVmyatina PDR Studio",
-    city: "Москва",
+    city: "Москве",
     phone: "+7 (495) 890-12-34",
     phoneRaw: "+74958901234",
     whatsappPhone: "74958901234",
@@ -26,6 +43,7 @@ export const COMPANIES: Record<string, CompanyConfig> = {
     isActive: true,
     priceModifier: 1.0,
     address: "г. Москва, ул. Кутузовский проспект, 36Б",
+    shortAddress: "Кутузовский проспект, 36Б",
     rating: 4.98,
     workingHours: "Ежедневно с 09:00 до 21:00",
     logoSubtext: "Премиальный PDR Детейлинг №1 в Москве"
@@ -33,7 +51,7 @@ export const COMPANIES: Record<string, CompanyConfig> = {
   "pdr-pro-spb": {
     slug: "pdr-pro-spb",
     name: "PDR-Pro Санкт-Петербург",
-    city: "Санкт-Петербург",
+    city: "Санкт-Петербурге",
     phone: "+7 (812) 555-90-80",
     phoneRaw: "+78125559080",
     whatsappPhone: "78125559080",
@@ -41,6 +59,7 @@ export const COMPANIES: Record<string, CompanyConfig> = {
     isActive: true,
     priceModifier: 0.95,
     address: "г. Санкт-Петербург, Московский проспект, 142",
+    shortAddress: "Московский проспект, 142",
     rating: 4.95,
     workingHours: "Ежедневно с 10:00 до 20:00",
     logoSubtext: "Студия локального ремонта ЛКП"
@@ -48,7 +67,7 @@ export const COMPANIES: Record<string, CompanyConfig> = {
   "master-dent-kzn": {
     slug: "master-dent-kzn",
     name: "Master Dent Казань",
-    city: "Казань",
+    city: "Казани",
     phone: "+7 (843) 222-33-44",
     phoneRaw: "+78432223344",
     whatsappPhone: "78432223344",
@@ -56,6 +75,7 @@ export const COMPANIES: Record<string, CompanyConfig> = {
     isActive: true,
     priceModifier: 0.85,
     address: "г. Казань, ул. Сибгата Хакима, 52",
+    shortAddress: "ул. Сибгата Хакима, 52",
     rating: 4.92,
     workingHours: "Пн-Сб с 09:00 до 19:00",
     logoSubtext: "Беспокрасочный ремонт кузова"
@@ -71,13 +91,14 @@ export const COMPANIES: Record<string, CompanyConfig> = {
     isActive: false, // ANTI-THEFT TRIGGERED: leads blocked, warning banner shown
     priceModifier: 1.2,
     address: "г. Сочи, Курортный проспект, 89",
+    shortAddress: "Курортный проспект, 89",
     rating: 4.99,
     workingHours: "Ежедневно с 09:00 до 21:00",
     logoSubtext: "Демонстрационный режим автосервиса"
   }
 };
 
-export const DEFAULT_SLUG = "autovmyatina-msk";
+export const DEFAULT_SLUG = "pdr-kovaleva-krd";
 
 export function getCompanyBySlug(slug?: string): CompanyConfig {
   if (!slug || !COMPANIES[slug]) {

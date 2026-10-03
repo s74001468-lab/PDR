@@ -20,31 +20,30 @@ const CASES: CaseStudy[] = [
     title: "Ремонт сложной вмятины арки и ребра крыла",
     car: "Toyota Land Cruiser",
     damage: "Глубокий острый залом ребра над передней колесной аркой",
-    price: "8 500 ₽",
-    time: "3.5 часа",
-    // User's exact real before & after cropped photographs
+    price: "4 000 ₽",
+    time: "от 40 минут до 3 часов",
     beforeImg: "/images/pdr-before.jpg",
     afterImg: "/images/pdr-after.jpg",
+  },
+  {
+    id: "bmw3-hood-krd",
+    title: "Капот BMW 3 (залом на ребре)",
+    car: "BMW 3 Series",
+    damage: "Сложный залом жесткого ребра алюминиевого капота",
+    price: "4 000 ₽",
+    time: "от 40 минут до 3 часов",
+    beforeImg: "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1200&auto=format&fit=crop",
+    afterImg: "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1200&auto=format&fit=crop",
   },
   {
     id: "bmw-door",
     title: "Вмятина на ребре жесткости двери",
     car: "BMW M4 Competition",
     damage: "Глубокий залом ребра 12 см от парковочной двери",
-    price: "7 500 ₽",
+    price: "7 000 ₽",
     time: "2.5 часа",
     beforeImg: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=1200",
     afterImg: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=1200",
-  },
-  {
-    id: "porsche-hood",
-    title: "Градовые повреждения капота",
-    car: "Porsche Cayenne",
-    damage: "14 точечных вмятин на алюминиевом капоте",
-    price: "16 000 ₽",
-    time: "4 часа (День в день)",
-    beforeImg: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200",
-    afterImg: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=1200",
   },
 ];
 
@@ -100,7 +99,7 @@ export function BeforeAfterSlider() {
             Интерактивный слайдер <span className="text-gradient-gold">ДО / ПОСЛЕ</span>
           </h2>
           <p className="text-gray-400 text-sm sm:text-base mt-2">
-            Потяните ползунок влево или вправо, чтобы оценить 100% восстановление заводской плоскости металлического крыла без малярки.
+            Потяните ползунок влево или вправо, чтобы оценить 100% восстановление заводской плоскости без малярки.
           </p>
         </div>
 
@@ -161,7 +160,7 @@ export function BeforeAfterSlider() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40" />
               
               <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-full bg-red-600/90 text-white text-xs font-extrabold uppercase tracking-wider shadow-lg">
-                ДО (Вмятина крыла)
+                ДО (Вмятина кузова)
               </div>
             </div>
 
