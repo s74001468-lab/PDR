@@ -49,10 +49,21 @@ export function Hero({ company, onScrollToCalculator, onScrollToForm }: HeroProp
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-[1.1] mb-6 font-heading"
           >
-            Удаление вмятин без покраски в г.{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
-              {company.city}
-            </span>
+            {company.heroTitle ? (
+              <>
+                Кузовной ремонт и удаление вмятин в{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+                  {company.city}
+                </span>
+              </>
+            ) : (
+              <>
+                Удаление вмятин без покраски в г.{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
+                  {company.city}
+                </span>
+              </>
+            )}
           </motion.h1>
 
           {/* СПИСОК ПРЕИМУЩЕСТВ С ИКОНКАМИ */}

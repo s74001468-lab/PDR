@@ -13,9 +13,27 @@ export interface CompanyConfig {
   rating: number;
   workingHours: string;
   logoSubtext?: string;
+  heroTitle?: string;
 }
 
 export const COMPANIES: Record<string, CompanyConfig> = {
+  "kuzovnoi-dok-krd": {
+    slug: "kuzovnoi-dok-krd",
+    name: "Кузовной центр «Кузовной Док»",
+    city: "Краснодаре",
+    phone: "+7 (918) 355-41-92",
+    phoneRaw: "79183554192",
+    whatsappPhone: "79183554192",
+    telegramChatId: "kuzovnoidok_krd",
+    isActive: false, // Задано is_active: false (Демо-режим Anti-Theft защиты)
+    priceModifier: 0.65,
+    address: "г. Краснодар, улица Стасова, 170/3",
+    shortAddress: "улица Стасова, 170/3",
+    rating: 4.4,
+    workingHours: "Ежедневно с 09:00 до 20:00",
+    logoSubtext: "Кузовной ремонт, удаление вмятин и детейлинг",
+    heroTitle: "Кузовной ремонт и удаление вмятин в Краснодаре"
+  },
   "pdr-kovaleva-krd": {
     slug: "pdr-kovaleva-krd",
     name: "Студия удаления вмятин PDR на Ковалёва",
@@ -114,7 +132,7 @@ export const COMPANIES: Record<string, CompanyConfig> = {
   }
 };
 
-export const DEFAULT_SLUG = "pdr-kovaleva-krd";
+export const DEFAULT_SLUG = "kuzovnoi-dok-krd";
 
 export function getCompanyBySlug(slug?: string): CompanyConfig {
   if (!slug || !COMPANIES[slug]) {
