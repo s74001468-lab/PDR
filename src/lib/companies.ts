@@ -17,6 +17,23 @@ export interface CompanyConfig {
 }
 
 export const COMPANIES: Record<string, CompanyConfig> = {
+  "garavto-pdr-krd": {
+    slug: "garavto-pdr-krd",
+    name: "Студия беспокрасочного удаления вмятин «ГарАвто Pdr»",
+    city: "Краснодаре",
+    phone: "+7 (918) 091-13-47",
+    phoneRaw: "79180911347",
+    whatsappPhone: "79180911347",
+    telegramChatId: "garavtopdr_krd",
+    isActive: false, // Задано is_active: false (Демо-режим Anti-Theft защиты)
+    priceModifier: 0.55, // Прайс-лист: от 1500 ₽ (малая ~2000 ₽, средняя ~4000 ₽, сложная ~7500 ₽)
+    address: "г. Краснодар, микрорайон Гидростроителей",
+    shortAddress: "Краснодар, мкр. Гидростроителей",
+    rating: 4.96,
+    workingHours: "Ежедневно с 09:00 до 20:00",
+    logoSubtext: "Студия беспокрасочного удаления вмятин ГМР",
+    heroTitle: "Удаление вмятин без покраски в Краснодаре (ГМР)"
+  },
   "kuzovnoi-dok-krd": {
     slug: "kuzovnoi-dok-krd",
     name: "Кузовной центр «Кузовной Док»",
@@ -132,7 +149,7 @@ export const COMPANIES: Record<string, CompanyConfig> = {
   }
 };
 
-export const DEFAULT_SLUG = "kuzovnoi-dok-krd";
+export const DEFAULT_SLUG = "garavto-pdr-krd";
 
 export function getCompanyBySlug(slug?: string): CompanyConfig {
   if (!slug || !COMPANIES[slug]) {
